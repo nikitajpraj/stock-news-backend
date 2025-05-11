@@ -1,9 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, 
 import openai
 from flask_cors import CORS
-
-
 app = Flask(__name__)
+CORS(app)  # <-- ✅ This enables CORS for all domains
+
 openai.api_key = "YOUR_OPENAI_KEY"  # Replace later using environment variable
 
 @app.route("/summarize", methods=["POST"])
